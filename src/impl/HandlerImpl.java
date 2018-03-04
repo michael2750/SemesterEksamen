@@ -6,62 +6,123 @@
 package impl;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import semestereksamen.Handler;
 
 /**
  *
  * @author micha
  */
-public class HandlerImpl implements Handler{
+public class HandlerImpl implements Handler {
 
+    public ArrayList<Person> persons = new ArrayList<>();
+    PersonData pd = new PersonData();
+
+    /*
+        Take all elements from the String[] data and put it into
+        a new ArrayList<String>.
+     */
     @Override
-    public ArrayList<String> switchList(String[] data) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public ArrayList<String> arrayToArrayList(String[] data) {
+        ArrayList<String> list = new ArrayList<>();
+        for (int i = 0; i < data.length; i++) {
+            list.add(data[i]);
+        }
+        return list;
     }
 
+    /*
+        Split the string for each comma.
+     */
     @Override
     public String[] splitString(String str) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String[] array = new String[4];
+        for (int i = 0; i < array.length; i++) {
+            array = str.split(",");
+        }
+        return array;
     }
 
+    /*
+        Sort an arraylist, smallest int first.
+     */
     @Override
-    public ArrayList<Integer> sortList(ArrayList<Integer> data) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public ArrayList<Integer> sortListAscending(ArrayList<Integer> data) {
+        Collections.sort(data);
+        return data;
     }
 
+    /*
+        Build multiple strings into one.
+     */
     @Override
     public String appendString(String str1, String str2) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        StringBuilder stringBuilder = new StringBuilder();
+        String finalStr;
+        stringBuilder.append(str1);
+        stringBuilder.append(str2);
+        finalStr = stringBuilder.toString();
+        return finalStr;
+
     }
 
+    /*
+        get the avarage of four numbers
+     */
     @Override
-    public void createPersons(Object person, ArrayList<Person> persons) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public int getAvarage(int a, int b, int c, int d) {
+        int avg = (a + b + c + d) / 4;
+        return avg;
     }
 
+    /*
+        Get the last value from the ArrayList.
+     */
     @Override
-    public ArrayList<Person> listPersons(Person person) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public int getLastValue(ArrayList<Integer> value) {
+        int last = value.get(value.size() - 1);
+        return last;
     }
 
+    /*
+        Create a person using the Person class.
+     */
     @Override
-    public Person getOldestPerson(ArrayList<Person> persons) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Person createPerson(String firstName, String lastName, int age) {
+        Person p = new Person(firstName, lastName, age);
+        return p;
     }
 
+    /*
+        Add persons using the PersonData class.
+     */
     @Override
-    public Person getYoungestPerson(ArrayList<Person> persons) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public ArrayList<Person> addPersons() {
+        persons = pd.getPersons();
+        return persons;
     }
 
+    /*
+        Return true or false weather the person is at work or not.
+     */
     @Override
-    public boolean isAtWork(int hour, ArrayList<Person> persons) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public boolean isAtWork(int hour) {
+        return !(hour <= 8 || hour >= 16);
     }
 
+    /*
+        Count up all persons that is 18 or above.
+     */
     @Override
-    public int isAdultCount(ArrayList<Person> person) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public int isAdultCount() {
+        int count = 0;
+        pd.addData();
+        persons = pd.getPersons();
+        for (Person p : persons) {
+            if (p.getAge() >= 18) {
+                count++;
+            }
+        }
+        return count;
     }
-
 }

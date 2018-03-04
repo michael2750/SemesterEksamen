@@ -15,12 +15,15 @@ public class Person {
     private int age;
     private boolean isAtWork;
 
-    public Person(String firstName, String lastName, int age, boolean isWorking) {
+    public Person(String firstName, String lastName, int age) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
-        this.isAtWork = isWorking;
     }
+
+    public Person() {
+    }
+    
     
     public String getFirstName() {
         return firstName;

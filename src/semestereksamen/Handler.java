@@ -16,24 +16,24 @@ public interface Handler {
     
 
     
-    public ArrayList<String> switchList(String[] data);
+    public ArrayList<String> arrayToArrayList(String[] data);
     
     public String[] splitString(String str);
     
-    public ArrayList<Integer> sortList(ArrayList<Integer> data);
+    public ArrayList<Integer> sortListAscending(ArrayList<Integer> data);
     
     public String appendString(String str1, String str2);
     
-    public void createPersons(Object person, ArrayList<Person> persons);
+    public int getAvarage(int a, int b, int c, int d);
     
-    public ArrayList<Person> listPersons(Person person);
+    public int getLastValue(ArrayList<Integer> value);
     
-    public Person getOldestPerson(ArrayList<Person> persons);
+    public Person createPerson(String firstName, String lastName, int age);
     
-    public Person getYoungestPerson(ArrayList<Person> persons);
+    public ArrayList<Person> addPersons();
     
-    public boolean isAtWork(int hour, ArrayList<Person> persons);
+    public boolean isAtWork(int hour);
    
-    public int isAdultCount(ArrayList<Person> person);
+    public int isAdultCount();
     
 }
