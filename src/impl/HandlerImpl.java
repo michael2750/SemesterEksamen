@@ -25,8 +25,8 @@ public class HandlerImpl implements Handler {
     @Override
     public ArrayList<String> arrayToArrayList(String[] data) {
         ArrayList<String> list = new ArrayList<>();
-        for (int i = 0; i < data.length; i++) {
-            list.add(data[i]);
+        for (String data1 : data) {
+            list.add(data1);
         }
         return list;
     }

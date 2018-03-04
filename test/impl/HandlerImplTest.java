@@ -190,7 +190,7 @@ public class HandlerImplTest {
         HandlerImpl instance = new HandlerImpl();
         boolean result = instance.isAtWork(hour);
         assertEquals(false, result);
-        hour = 7;
+        hour = 8;
         result = instance.isAtWork(hour);
         assertEquals(false, result);
         hour = 15;
