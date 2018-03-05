@@ -103,11 +103,12 @@ public class HandlerImpl implements Handler {
     }
 
     /*
-        Return true or false weather the person is at work or not.
+        Return true or false wether the person is at work or not.
+        Working hours are between 8-16.
      */
     @Override
     public boolean isAtWork(int hour) {
-        return !(hour <= 8 || hour >= 16);
+        return !(hour < 8 || hour > 16);
     }
 
     /*

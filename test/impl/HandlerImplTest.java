@@ -23,7 +23,7 @@ public class HandlerImplTest {
     }
 
     /**
-     * Test of switchList method, of class HandlerImpl.
+     * Test of arrayToArrayList method, of class HandlerImpl.
      */
     @Test
     public void testArrayToArrayList() {
